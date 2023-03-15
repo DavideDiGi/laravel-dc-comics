@@ -1,1 +1,333 @@
 @import "~bootstrap/scss/bootstrap";
+
+
+//******************** HEADER ********************
+header {
+    height: 70px;
+
+    div {
+        font-size: 0.8rem;
+        height: 100%;
+        min-width: 12vw;
+        line-height: 70px;
+    }
+
+    .logo {
+        text-align: center;
+
+        img {
+            // width: 100%;
+            height: 50px;
+
+        }
+    }
+
+    .search {
+        // border-bottom: 1px solid skyblue;
+        height: 30px;
+
+
+        input {
+            height: 30px;
+            outline: none;
+            border-bottom: 2px solid rgb(56, 128, 241);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+
+        button {
+            font-size: 0.8rem;
+            color: black;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            position: absolute;
+            right: 80px;
+        }
+    }
+
+    nav {
+        height: 100%;
+        flex-grow: 1;
+        align-self: center;
+
+        ul {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+            li {
+                font-size: 0.8rem;
+            }
+
+            .active {
+                color: rgb(56, 128, 241);
+            }
+        }
+    }
+
+}
+
+
+//******************** MAIN ********************
+
+main {
+    .jumbotron {
+        width: 100%;
+        height: 300px;
+        background-image: url('img/jumbotron.jpg');
+        background-size: cover;
+        position: relative;
+
+        .button {
+            background-color: rgb(56, 128, 241);
+            border-style: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+
+            &.big {
+                font-size: 1.3rem;
+                position: absolute;
+                // left: 20%;
+                bottom: -20px;
+                padding: 5px 20px;
+            }
+        }
+    }
+
+    .card-container {
+        margin-top: 50px;
+        margin-bottom: 10px;
+
+
+        .card {
+            width: calc(100% / 6);
+            margin-bottom: 20px;
+            height: 200px;
+            padding: 10px;
+            text-decoration: none;
+            border: none;
+            color: white;
+            display: inline-block;
+            background-color: transparent;
+
+            .card-cover {
+                // background-color: gold;
+                height: 80%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .card-title {
+                margin-top: 10px;
+                font-size: 0.8rem;
+            }
+        }
+
+    }
+
+    .load {
+        text-align: center;
+        padding-bottom: 20px;
+
+        .lil {
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 5px 40px;
+            background-color: rgb(56, 128, 241);
+            border: none;
+
+        }
+
+    }
+
+    .topFooter {
+        width: 100vw;
+        background-color: rgb(56, 128, 241);
+        padding: 40px 0;
+
+        .container {
+            width: 80vw;
+            margin: 0 auto;
+
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+
+                li {
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        // padding-right: 100px;
+
+                        &.credit {
+                            height: 100%;
+                        }
+
+                        img {
+                            max-height: 50px;
+                            max-width: 50px;
+                            margin-right: 15px;
+                        }
+
+                    }
+
+                    .merchandising-text {
+                        font-size: 0.7rem;
+                        width: 100%;
+
+                        &.credit-card {
+                            width: 150px;
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+//******************** FOOTER ********************
+
+footer {
+    background-color: rgb(48, 48, 48);
+
+
+    .middleFooter {
+        width: 100%;
+        background-image: url(/img/footer-bg.jpg);
+        background-size: 1800px;
+
+        .container {
+            width: 80vw;
+            margin: 0 auto;
+            display: flex;
+
+            .bg-logo-container {
+                background-image: url(/img/dc-logo-bg.png);
+                background-repeat: no-repeat;
+                width: 65%;
+                background-position-x: 180px;
+                background-position-y: -80px;
+            }
+
+            .links-container {
+                max-height: 350px;
+                width: 35%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                margin: 50px 0;
+
+
+                >div {
+                    margin-right: 30px;
+                    color: white;
+                    font-weight: bold;
+
+                    h3 {
+                        margin-bottom: 10px;
+                        font-size: 1.4rem;
+                        font-weight: bold;
+
+                    }
+
+                    a {
+                        line-height: 1.5rem;
+                        font-size: 0.8rem;
+                        color: grey;
+                        display: block;
+                        text-decoration: none;
+                    }
+
+                    &.shop {
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    .footer-container {
+        height: 80px;
+
+
+        .sign {
+            color: white;
+            font-size: 0.9rem;
+            padding: 5px;
+            border: 2px solid rgb(56, 128, 241);
+
+            button {
+                background-color: transparent;
+                color: white;
+                font-weight: bold;
+                border: none;
+            }
+        }
+
+        .nav-container {
+            font-size: 0.8rem;
+            height: 100%;
+            min-width: 12vw;
+            line-height: 70px;
+        }
+
+        nav {
+            width: 100%;
+            height: 100%;
+            align-self: center;
+
+            ul {
+                height: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                .follow {
+                    color: rgb(56, 128, 241);
+                    font-weight: bold;
+                    font-size: 0.9rem;
+
+                    margin-right: 20px;
+                }
+
+
+                li {
+                    font-size: 0.8rem;
+
+                    a {
+                        color: gray;
+                        text-decoration: none;
+                        margin-right: 15px;
+
+                        img {
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

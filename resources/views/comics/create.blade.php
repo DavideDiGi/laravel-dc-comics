@@ -5,10 +5,10 @@
     <div class="container">
         <div class="row">
             <div class="col-6 mx-auto">
-
+                
                         <h1 class="card-title text-center my-3">Inserisci un fumetto</h1>
 
-                <div class="row">
+                <div class="row text-light">
                     <div class="col mb-3">
                         <form action="{{ route('comics.store') }}" method="post">
                             @csrf
@@ -33,11 +33,11 @@
                                 <input input type="file" class="form-control" name="comic-thumb" id="comic-thumb"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="comic-price" class="form-label">Inserisci il prezzo</label>
-                                <input input type="number" class="form-control" name="comic-price" id="comic-price"></textarea>
+                                <label for="comic-price" class="form-label">Inserisci il prezzo *</label>
+                                <input input type="number" class="form-control" step="0.01" name="comic-price" id="comic-price"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="comic-sale-date" class="form-label">Data uscita</label>
+                                <label for="comic-sale-date" class="form-label">Data uscita *</label>
                                 <input input type="date" class="form-control" name="comic-sale-date" id="comic-sale-date"></textarea>
                             </div>
                             <div>
