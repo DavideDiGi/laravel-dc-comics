@@ -8,7 +8,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="card-title">Laravel Comics WELCOME</h1>
+                        <h1 class="card-title">Laravel Comics EDIT</h1>
                     </div>
                 </div>
 
