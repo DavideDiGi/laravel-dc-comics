@@ -30,6 +30,9 @@
                                 <span class="text-success">Prezzo: {{ $comic->price }}€</span>
                                 <span class="text-secondary">Data di uscita: {{ $comic->sale_date }}</span>
                             </div>
+                            <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning rounded-0">
+                                Modifica fumetto
+                            </a>
                             <a href="{{ route('comics.index') }}" class="btn btn-dark rounded-0">
                                 Torna indietro
                             </a>

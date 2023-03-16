@@ -77,130 +77,39 @@ header {
 //******************** MAIN ********************
 
 main {
-    .jumbotron {
-        width: 100%;
-        height: 300px;
-        background-image: url('img/jumbotron.jpg');
-        background-size: cover;
-        position: relative;
-
-        .button {
-            background-color: rgb(56, 128, 241);
-            border-style: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-
-            &.big {
-                font-size: 1.3rem;
-                position: absolute;
-                // left: 20%;
-                bottom: -20px;
-                padding: 5px 20px;
-            }
-        }
-    }
-
-    .card-container {
-        margin-top: 50px;
-        margin-bottom: 10px;
-
-
-        .card {
-            width: calc(100% / 6);
-            margin-bottom: 20px;
-            height: 200px;
-            padding: 10px;
-            text-decoration: none;
-            border: none;
-            color: white;
-            display: inline-block;
-            background-color: transparent;
-
-            .card-cover {
-                // background-color: gold;
-                height: 80%;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            .card-title {
-                margin-top: 10px;
-                font-size: 0.8rem;
-            }
+    .card {
+        h5 {
+            margin-bottom: 15px;
         }
 
-    }
-
-    .load {
-        text-align: center;
-        padding-bottom: 20px;
-
-        .lil {
-            color: white;
-            font-weight: bold;
-            font-size: 0.8rem;
-            padding: 5px 40px;
-            background-color: rgb(56, 128, 241);
-            border: none;
-
-        }
-
-    }
-
-    .topFooter {
-        width: 100vw;
-        background-color: rgb(56, 128, 241);
-        padding: 40px 0;
-
-        .container {
-            width: 80vw;
-            margin: 0 auto;
-
-            ul {
-                list-style: none;
+        .card-body {
+            .action-buttons {
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
 
-                li {
-
-                    a {
-                        color: white;
-                        text-decoration: none;
-                        font-size: 0.8rem;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        // padding-right: 100px;
-
-                        &.credit {
-                            height: 100%;
-                        }
-
-                        img {
-                            max-height: 50px;
-                            max-width: 50px;
-                            margin-right: 15px;
-                        }
-
-                    }
-
-                    .merchandising-text {
-                        font-size: 0.7rem;
-                        width: 100%;
-
-                        &.credit-card {
-                            width: 150px;
-
-                        }
-                    }
-
+                >* {
+                    margin-right: 15px;
                 }
+
+                .btn-dark {
+                    // margin-right: 10px;
+                }
+
+                .btn-warning {
+                    // margin-left: 10px;
+                }
+
+                .btn-danger {
+                    // margin-top: 10px;
+                }
+
             }
         }
+    }
+
+    .btn-success {
+        border: 1px solid black;
+        width: 30%;
     }
 }
 

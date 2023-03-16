@@ -65,7 +65,7 @@ class ComicController extends Controller
     public function show($id)
     {
 
-        $comic = Comic::find($id);
+        $comic = Comic::findOrFail($id);
 
         return view('comics.show', compact('comic'));
     }
@@ -92,6 +92,20 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $comic = Comic::findOrFail($id);
+
+        $data = $request->all();
+
+        $comic->title = $data['comic-title'];
+        $comic->description = $data['comic-description'];
+        $comic->thumb = $data['comic-thumb'];
+        $comic->price = $data['comic-price'];
+        $comic->series = $data['comic-serie'];
+        $comic->sale_date = $data['comic-sale-date'];
+        $comic->type = $data['comic-type'];
+        $comic->save();
+
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -102,6 +116,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
