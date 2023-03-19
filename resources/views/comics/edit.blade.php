@@ -10,38 +10,51 @@
 
                 <div class="row text-light">
                     <div class="col mb-3">
+                        
                         <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="post">
                             @csrf
 
                             @method('PUT')
 
                             <div class="mb-3">
-                                <label for="comic-title" class="form-label">Titolo del fumetto *</label>
-                                <input type="text" class="form-control" name="comic-title" id="comic-title" value="{{ $comic->title }}" placeholder="es: Batgirl #1">
+                                <label for="comic-title" class="form-label @error('comic-title') text-danger @enderror">Titolo del fumetto *</label>
+                                <input type="text" class="form-control @error('comic-title') is-invalid @enderror" name="comic-title" id="comic-title" value="{{ old('comic-title', $comic->title) }}" placeholder="es: Batgirl #1">
+                                @error('comic-title')
+                                    <div class="alert alert-danger py-2">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="comic-description" class="form-label">Scrivi una descrizione del fumetto</label>
-                                <textarea class="form-control" name="comic-description" id="comic-description" rows="3" >{{ $comic->description }}</textarea>
+                                <label for="comic-description" class="form-label @error('comic-description') text-danger @enderror">Scrivi una descrizione del fumetto</label>
+                                <textarea class="form-control @error('comic-description') is-invalid @enderror" name="comic-description" id="comic-description" rows="3" >{{ old('comic-description', $comic->description) }}</textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="comic-serie" class="form-label">Serie del fumetto *</label>
-                                <input type="text" class="form-control" name="comic-serie" id="comic-serie" value="{{ $comic->series }}" placeholder="es: Batgirl"></textarea>
+                                <label for="comic-serie" class="form-label @error('comic-serie') text-danger @enderror">Serie del fumetto *</label>
+                                <input type="text" class="form-control @error('comic-serie') is-invalid @enderror" name="comic-serie" id="comic-serie" value="{{ old('comic-serie', $comic->series) }}" placeholder="es: Batgirl"></textarea>
+                                @error('comic-serie')
+                                    <div class="alert alert-danger py-2">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="comic-type" class="form-label">Tipo del fumetto</label>
-                                <input type="text" class="form-control" name="comic-type" id="comic-type" value="{{ $comic->type }}" placeholder="es: comic book"></textarea>
+                                <label for="comic-type" class="form-label @error('comic-thumb') text-danger @enderror">Tipo del fumetto</label>
+                                <input type="text" class="form-control @error('comic-thumb') is-invalid @enderror" name="comic-type" id="comic-type" value="{{ old('comic-type', $comic->type) }}" placeholder="es: comic book"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="comic-thumb" class="form-label">Inserisci una Thumbnail</label>
-                                <input input type="file" class="form-control" name="comic-thumb" id="comic-thumb">
+                                <label for="comic-thumb" class="form-label @error('comic-thumb') text-danger @enderror">Inserisci una Thumbnail</label>
+                                <input input type="file" class="form-control @error('comic-thumb') is-invalid @enderror" name="comic-thumb" id="comic-thumb" value="{{ old('comic-price', $comic->price) }}">
                             </div>
                             <div class="mb-3">
-                                <label for="comic-price" class="form-label">Inserisci il prezzo *</label>
-                                <input input type="number" class="form-control" name="comic-price" id="comic-price" value="{{ $comic->price }}"></textarea>
+                                <label for="comic-price" class="form-label @error('comic-price') text-danger @enderror">Inserisci il prezzo *</label>
+                                <input input type="number" class="form-control @error('comic-price') is-invalid @enderror" step="0.01" name="comic-price" id="comic-price" value="{{ old('comic-price', $comic->price) }}"></textarea>
+                                @error('comic-price')
+                                    <div class="alert alert-danger py-2">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="comic-sale-date" class="form-label">Data uscita *</label>
-                                <input input type="date" class="form-control" name="comic-sale-date" id="comic-sale-date" value="{{ $comic->sale_date }}"></textarea>
+                                <label for="comic-sale-date" class="form-label @error('comic-sale-date') text-danger @enderror">Data uscita *</label>
+                                <input input type="date" class="form-control @error('comic-sale-date') is-invalid @enderror" name="comic-sale-date" id="comic-sale-date" value="{{ old('comic-sale-date', $comic->sale_date) }}"></textarea>
+                                @error('comic-sale-date')
+                                    <div class="alert alert-danger py-2">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div>
                                 <button type="submit" class="btn btn-success w-100">
